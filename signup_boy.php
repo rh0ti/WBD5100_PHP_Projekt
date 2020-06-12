@@ -13,12 +13,6 @@ require "header.php"
 
 <div class="background">
 
-
-
-
-
-
-
             <div class="text">
                 <h1>Registrierung</h1>
                 <p>Hast du bereits einen Account? <a href="index.php">Login</a></p>
@@ -59,9 +53,6 @@ require "header.php"
                 </form>
             </div>
         </div>
-
-
-
 
 </main>
 
