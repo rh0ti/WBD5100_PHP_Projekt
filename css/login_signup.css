@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow|Cinzel|Julius+Sans+One|Poiret+One|Quicksand|Raleway&display=swap');
+
+/* My CSS Reset */
+*{
+	margin: 0;
+	padding: 0;
+	}
+
+*, *:after, *:before{
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+body{
+    font-family: 'Quicksand', sans-serif;
+    /* background: black; */
+}
+
+.background{
+    background: url(../img/background4.jpg);
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.text, .box{
+    margin-top: 15vh;
+}
+
+.text2, .box2{
+    margin-top: 15vh;
+}
+
+.text{
+    margin-left: 40%;
+    font-weight: 300;
+}
+
+.text2{
+    margin-left: 45%;
+    font-weight: 300;
+}
+
+
+.box{
+    margin-left: 45%;
+}
+
+.box2{
+    margin-left: 45%;
+}
+
+.text h1{
+    font-size: 70px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.text2 h1{
+    font-size: 70px;
+    color: #fff;
+    font-weight: 500;
+}
+
+
+.text p{
+    font-size: 20px;
+    color: #fff;
+    font-weight: 300;
+}
+
+.text p a{
+    color: #fff;
+    font-weight: 700;
+}
+
+.text2 p{
+    font-size: 20px;
+    color: #fff;
+    font-weight: 300;
+}
+
+.text2 p a{
+    color: #fff;
+    font-weight: 700;
+}
+
+
+.form{
+    background: transparent;
+    color: #fff;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+}
+
+
+input{
+    margin: 20px 0;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.username, .password,.password2, .email{
+    border-bottom: 1px solid #fff;
+}
+
+.button{
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 19px;
+
+}
+
+.button:hover{
+    background: #fff;
+    color: #000;
+
+}
+
+ main .error{
+    color: white;
+    background: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+
+}
+
+.error2{
+    color: white;
+    background: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+
+}
+
+.success{
+    color: white;
+    background: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+
+}
+
+main .info{
+    color: white;
+    background: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+
+}
+
+
+.box3{
+    height:15%;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.box3 .form .button{
+    color: #707070;
+}
+
+.background .text3{
+    margin-left: 30%;
+    font-weight: 300;
+}
+
+.background .text3 h1{
+    font-size: 70px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.text3 p{
+    color: #fff;
+    font-weight: 700;
+}
+
+.text3{
+    margin-top: 45vh;
+}

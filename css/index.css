@@ -1,0 +1,149 @@
+/* My CSS Reset */
+*{
+	margin: 0;
+	padding: 0;
+	}
+
+*, *:after, *:before{
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    color: #707070;
+    text-transform: uppercase;
+}
+
+/* --------------------------------------------------BEREICH - NAVIGATION -------------------------------------------------------*/
+
+ul{
+    position: absolute;
+    right: 12%;
+}
+
+.nav-item{
+    color: black;
+}
+
+/* --------------------------------------------------BEREICH - FIRST PAGE - HEADER-----------------------------------------------*/
+
+.header-left{
+    height: 100vh;
+    background-color: #6F7A72;
+}
+
+.header-left h1,p{
+    color: white;
+}
+
+.header-right{
+    height: 100vh;
+}
+
+.header-image{
+    height: auto;
+    max-width: 100%;
+    position: absolute;
+    bottom: 0%;
+    left:0%;
+}
+
+.image-title img{
+    height: 90px;
+    position: relative;
+    top: 30%;
+    -webkit-animation: title 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+            animation: title 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+@-webkit-keyframes title{
+    0% {
+        -webkit-filter: blur(12px);
+                filter: blur(12px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-filter: blur(0px);
+                filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes title{
+    0% {
+        -webkit-filter: blur(12px);
+                filter: blur(12px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-filter: blur(0px);
+                filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+
+
+/* --------------------------------------------------BEREICH - SECOND PAGE ------------------------------------------------------*/
+
+.second-page{
+    height: 80vh;
+    background-color: #6F7A72;
+
+}
+
+.girl-frame,.boy-frame{
+    height:90vh;
+    background-color: white;
+}
+
+.girl-image,.boy-image{
+    position: absolute;
+    bottom: 15%;
+    right: 0%;
+
+}
+
+
+.text-boy-girl{
+    position: absolute;
+    right: 24%;
+    bottom: 30%;
+    background-color:  #6F7A72;
+    height: 100px;
+    width: 350px;
+    opacity:0.75;
+}
+/* --------------------------------------------------BEREICH - IMAGE PAGE ------------------------------------------------------*/
+
+.page{
+    height: 50vh;
+    background-color: #6F7A72;
+    padding: 40px;
+
+}
+
+
+/* --------------------------------------------------BERECIH - THIRD PAGE ------------------------------------------------------*/
+
+.contact-left{
+    height: 90vh;
+    background-color:white;
+}
+
+.contact-right h1,p{
+    color: white;
+}
+
+.contact-right{
+    height: 90vh;
+    background-color: #6F7A72;
+    
+}
+
