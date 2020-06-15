@@ -8,17 +8,11 @@ require "header.php"
 
 
 <main>
-
-
-
-<div class="background">
-
-            <div class="text">
-                <h1>Registrierung</h1>
-                <p>Hast du bereits einen Account? <a href="index.php">Login</a></p>
-            </div>
-            <div class="box">
-
+    <div class="background">
+        <div class="text">
+            <h1>Registrierung</h1>
+            <p>Hast du bereits einen Account? <a href="index.php">Login</a></p>
+        </div>
             <?php
                 if(isset($_GET['error'])){
                     if($_GET['error'] == "emptyfields"){
@@ -44,6 +38,7 @@ require "header.php"
                     }
                 }
             ?>
+            <div class="box">
                 <form class="form" action="includes/signup.inc.php" method="post">
                     <input class="username" type="text" name="uid" placeholder= "Username">
                     <input class="email" type="text" name="mail" placeholder= "E-Mail">
@@ -53,9 +48,7 @@ require "header.php"
                 </form>
             </div>
         </div>
-
 </main>
-
 
 <?php
 require "footer.php"

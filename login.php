@@ -17,7 +17,7 @@ require "header.php"
                 <p>Noch kein Account? <a href="signup.php">Signup</a></p>
             </div>
         <div class="box2">
-
+            <!-- PHP - Meldung beim Einlogen -->
         <?php
             if(isset($_SESSION['userId'])){
                 echo '<p class="info" > Du hast dich erfolgreich eingeloggt!</p>';
@@ -26,7 +26,7 @@ require "header.php"
                 echo '<p class="info" >Log dich ein!</p>';
             }
         ?>
-
+        <!-- PHP - ERROR Meldung, wenn etwas nicht korrekt ausgefüllt ist! -->
         <?php
             if(isset($_GET['error'])){
                 if($_GET['error'] == "emptyfields"){
@@ -43,7 +43,7 @@ require "header.php"
                 }
             }
         ?>
-
+        <!-- Login Formular -->
             <form class="form" action="includes/login.inc.php" method="post">
                 <input class="username" type="text" name= "mailuid" placeholder="Username/E-Mail...">
                 <input class="password"type="password" name= "pwd" placeholder="Password">

@@ -61,13 +61,13 @@
                         <div class="col-5 col-md-5 mx-auto girl-frame">
                             <img src="./img/girl4.png" class="img-fluid girl-image" alt="Responsive image">
                             <div class="text-boy-girl d-flex align-items-center justify-content-center" > 
-                                <a class="h1 text-white" href="signup_girl.php">GIRL</a>
+                                <a class="h1 text-white" href="signup.php">GIRL</a>
                             </div>
                             </div>
                             <div class="col-5 col-md-5 mx-auto boy-frame">
                                 <img src="./img/boy2.png" class="img-fluid boy-image" alt="Responsive image">
                             <div class="col text-boy-girl d-flex align-items-center justify-content-center">
-                                <a class="h1 text-white" href="signup_boy.php">BOY</a>
+                                <a class="h1 text-white" href="signup.php">BOY</a>
                             </div>
                         </div>
                     </div>
