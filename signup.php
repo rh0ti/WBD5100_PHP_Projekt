@@ -2,15 +2,8 @@
 session_start();
 ?>
 
-<?php
-require "header.php"
-?>
-
-
-<main>
-
-    <section id="signup">
-    <header class="container-fluid">
+<section id="signup">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-xl-4 header-left d-flex flex-column justify-content-center align-items-center">
                 <div class="text">
@@ -63,7 +56,11 @@ require "header.php"
     </header>
   </section>
 
-</main>
+
+  <?php
+require "header.php"
+?>
+
 
 <?php
 require "footer.php"
