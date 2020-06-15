@@ -2,22 +2,27 @@
 session_start();
 ?>
 
+    <div class="image-title fixed-top p-3">
+            <img src="img/logo-name.png" class="img-fluid" alt="Name logo of Silaryon" > 
+    </div>
+
 <?php
 require "header.php"
 ?>
 
-<body>
-    <header>
-        <main>
-
-        </main>
-        <div class="background">
+<section id="login">
+        <div class="row position-relative">
+            <div class="col-xl-8 contact-left ">
+                <img src="./img/smallgirl.jpg" class="img-fluid header-image" alt="Responsive image">
+            </div>
+            <div class="col-lg-4 contact-right d-flex align-items-center justify-content-center flex-column">
+            
             <div class="text2">
                 <h1>Login</h1>
                 <p>Noch kein Account? <a href="signup.php">Signup</a></p>
             </div>
-        <div class="box2">
-            <!-- PHP - Meldung beim Einlogen -->
+
+                        <!-- PHP - Meldung beim Einlogen -->
         <?php
             if(isset($_SESSION['userId'])){
                 echo '<p class="info" > Du hast dich erfolgreich eingeloggt!</p>';
@@ -43,15 +48,19 @@ require "header.php"
                 }
             }
         ?>
+
         <!-- Login Formular -->
+
+        <div class="box2">
             <form class="form" action="includes/login.inc.php" method="post">
                 <input class="username" type="text" name= "mailuid" placeholder="Username/E-Mail...">
                 <input class="password"type="password" name= "pwd" placeholder="Password">
                 <button class="button" type="submit" name="login-submit">Login</button>
             </form>
-    </header>
-</body>
-</html>
+          </div>
+
+ </section>
+
 
 
 <?php
