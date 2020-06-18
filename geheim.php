@@ -2,6 +2,11 @@
 session_start();
 ?>
 
+<?php
+$_SESSION['username'] = "Ad";
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +31,7 @@ session_start();
                             <a class="nav-link js-scroll-trigger" href="#">Discover</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#">Dein Profil</a>
+                            <a class="nav-link js-scroll-trigger" href="profil.php">Dein Profil</a>
                         </li>
                         <div class="box3">
                             <form class="form" action="includes/logout.inc.php" method="post">
@@ -53,69 +58,57 @@ session_start();
                 <h2>Gallery</h2>
                 <div class="wrapper row d-flex align-items-center justify-content-center">
 
-                    <div class="card gallery-container" style="width: 18rem;">
-                        <img src="./img/face1.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Profil</a>
-                        </div>
-                    </div>
+                    
 
-                    <div class="card gallery-container" style="width: 18rem;">
-                        <img src="./img/face2.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Profil</a>
-                        </div>
-                    </div>
+                    <?php
+                    include_once 'includes/dbh.inc.php';
 
-                    <div class="card gallery-container" style="width: 18rem;">
-                        <img src="./img/face3.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Profil</a>
-                        </div>
-                    </div>
+                    $sql = "SELECT * FROM gallery ORDER BY orderGallery DESC";
+                    $stmt = mysqli_stmt_init($conn);
+                    if(!mysqli_stmt_prepare($stmt, $sql)){
+                        echo "SQL statement failed0!";
+                    }else{
+                        mysqli_stmt_execute($stmt);
+                        $result = mysqli_stmt_get_result($stmt);
 
-                    <div class="card gallery-container" style="width: 18rem;">
-                        <img src="./img/face4.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Profil</a>
-                        </div>
-                    </div>
+                        while($row = mysqli_fetch_assoc($result)){
 
-                    <!-- <div class="card gallery-container"style="width: 18rem;">
-                        <a href="#">
-                            <div></div>
-                            <h3>This is a title</h3>
-                            <p>This is a paragraph</p>
-                        </a>
-                    </div> -->
+                            echo '<div class="card gallery-container" style="width: 18rem;">
+                            <img src="img/gallery/'.$row["imgFullNameGallery"].'" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">'.$row["titleGallery"].'</h5>
+                                <p class="card-text">'.$row["descGallery"].'</p>
+                                <a href="#" class="btn btn-primary">Profil</a>
+                            </div>
+                            </div>';
+                        }
+                    }
+
+                    ?>
+
+                    
                 </div>
-                <div class="gallery-upload">
-                        <form action="includes/gallery-upload.inc.php" method="post" enctype="multipart/form-data" style="width: 400px; border: solid 1px black; position: relative; right: -30%" class="p-3 m-3">
-                            <!-- <input type="text" name="filename" placeholder="File name">
-                            <input type="text" name="filetitle" placeholder="Image title">
-                            <input type="text" name="filedesc" placeholder="Image description">
-                            <input type="file" name="file"> -->
 
+                <?php
+                if(isset($_SESSION['username'])){
+
+                
+                 echo '<div class="gallery-upload">
+                        <form action="includes/gallery-upload.inc.php" method="post" enctype="multipart/form-data" style="width: 400px; border: solid 1px black; position: relative; right: -30%" class="p-3 m-3">
                             <div class="form-group">
-                            <input type="text" class="form-control" placeholder="File name...">
-                            <input type="text" class="form-control" placeholder="Your name...">
-                            <textarea class="form-control" rows="3" placeholder="Bio description.."></textarea>
-                            <input type="file" class="form-control-file">
-                            <button type="submit" class="btn btn-primary">Upload</button>
+                            <input type="text" class="form-control" name="filename" placeholder="File name...">
+                            <input type="text" class="form-control" name="filetitle" placeholder="Your name...">
+                            <textarea class="form-control" rows="3" name="filedesc" placeholder="Bio description.."></textarea>
+                            <input type="file" name="file" class="form-control-file">
+                            <button type="submit" name="submit" class="btn btn-primary">Upload</button>
                             </div>
                         </form>
-                    
-                </section>
+                        </div>';
+                    }
+                        ?>
+        </section>
 
-            </div>
+            
 </section>
 
 <?php
