@@ -3,7 +3,7 @@ session_start();
 ?>
 
     <div class="image-title fixed-top p-3">
-            <img src="img/logo-name.png" class="img-fluid" alt="Name logo of Silaryon" > 
+        <img src="img/logofinal.png" class="img-fluid" style="height:180px;" alt="Rhoti Van Logo">
     </div>
 
 <?php

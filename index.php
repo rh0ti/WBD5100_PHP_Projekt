@@ -23,8 +23,7 @@
             </div>
         </div>
         <div class="image-title fixed-top p-3">
-                <img src="img/logo-name.png" class="img-fluid" alt="Name logo of Silaryon" > 
-        </div>
+                <img src="img/logofinal.png" class="img-fluid" style="height:180px;" alt="Rhoti Van Logo">
     </header>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light  fixed-top" id="mainNav">

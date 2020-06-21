@@ -2,11 +2,6 @@
 session_start();
 ?>
 
-<?php
-$_SESSION['username'] = "Ad";
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,9 +14,9 @@ $_SESSION['username'] = "Ad";
 </head>
 
  <!-- Navigation -->
- <nav class="navbar navbar-expand-lg navbar-light  fixed-top" id="mainNav">
+ <nav class="navbar navbar-expand-lg navbar-light"  style="background-color: #6F7A72; height: 90px;" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">logo</a>
+            <a class="navbar-brand js-scroll-trigger"  href="#page-top"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -43,19 +38,22 @@ $_SESSION['username'] = "Ad";
         </div>
     </nav>
 
+    <div class="image-title  p-3 d-flex justify-content-center" >
+                <img src="img/logofinal.png" class="img-fluid " style="height:180px; position:absolute; top:2%;" alt="Rhoti Van Logo">
+    </div>
+
 <section id="gallery">
         <div class="row position-relative">
-            <div class="col-xl gallery d-flex align-items-center justify-content-center flex-column" style="height: 130vh;">
+            <div class="col-xl gallery d-flex align-items-center justify-content-center flex-column" style="height: 90vh;">
 
-                <img src="./img/toto.png" class="img-fluid header-image" alt="Responsive image" style="width: 300px;">
 
                 <div class="text3">
                     <h1>Herzlich Wilkommen!</h1>
-                    <p>Du bist jetzt im geschützten Bereich.</p>
+                    <p>Finde jetzt neue Freunde.</p>
                 </div>
-
+                <br>
                 <section class="gallery-links">
-                <h2>Gallery</h2>
+                <h2>Discover</h2>
                 <div class="wrapper row d-flex align-items-center justify-content-center">
 
                     
@@ -88,24 +86,6 @@ $_SESSION['username'] = "Ad";
 
                     
                 </div>
-
-                <?php
-                if(isset($_SESSION['username'])){
-
-                
-                 echo '<div class="gallery-upload">
-                        <form action="includes/gallery-upload.inc.php" method="post" enctype="multipart/form-data" style="width: 400px; border: solid 1px black; position: relative; right: -30%" class="p-3 m-3">
-                            <div class="form-group">
-                            <input type="text" class="form-control" name="filename" placeholder="File name...">
-                            <input type="text" class="form-control" name="filetitle" placeholder="Your name...">
-                            <textarea class="form-control" rows="3" name="filedesc" placeholder="Bio description.."></textarea>
-                            <input type="file" name="file" class="form-control-file">
-                            <button type="submit" name="submit" class="btn btn-primary">Upload</button>
-                            </div>
-                        </form>
-                        </div>';
-                    }
-                        ?>
         </section>
 
             
