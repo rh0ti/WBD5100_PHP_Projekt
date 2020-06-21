@@ -54,7 +54,7 @@ $_SESSION['username'] = "Ad";
                <img src="./img/toto.png" class="img-fluid header-image" alt="Responsive image" style="width: 300px;"> 
 
                 <div class="text3">
-                    <h1>Erstelle dein Profil!</h1>
+                    <h1>Bearbeite dein Profil!</h1>
                     <p>Und finde neue Freunde.</p>
                 </div>
                 
