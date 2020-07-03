@@ -121,127 +121,16 @@
                 </div>
             </div>
     </section>
-    <!-- Bereich THIRD-PAGE KONTAKFORMULAR-->
-    <section id="third-page">
-        <div class="row position-relative">
-            <div class="col-xl-8 contact-left ">
-                <img src="./img/header-1.jpg" class="img-fluid header-image" alt="Responsive image">
-            </div>
-            <div class="col-lg-4 contact-right d-flex align-items-center justify-content-center flex-column">
-                <div>
-                    <h1>Kontaktformular</h1>
-                    <p>Hast du eine Frage? Dann schreib uns.</p>
-                </div>
-                <div class="contact-form">
-                        <form>
-                            <fieldset class="form-group">
-                                <div class="form-check">
-                                    <label class="form-check-label text-white">
-                                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-                                    Herr
-                                    </label>
-                                </div>
 
-                                <div class="form-check">
-                                <label class="form-check-label text-white">
-                                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
-                                    Frau
-                                    </label>
-                                </div>
-
-                                <label for="vorname" ></label>
-                                <input type="vorname" id="vorname" class="form-control" name="vorname" placeholder="Vorname" value="">
-
-                                <label for="nachname"></label>
-                                <input type="nachname" id="nachname" class="form-control" name="nachname" placeholder="Nachname" value="">
-
-
-
-                                    <label for="exampleInputEmail1"></label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-
-
-                                    <label for="exampleSelect1"></label>
-                                    <select class="form-control" id="exampleSelect1">
-                                      <option>Betreff</option>
-                                      <option>2</option>
-                                      <option>3</option>
-                                      <option>4</option>
-                                      <option>5</option>
-                                    </select>
-
-                                    <label for="exampleTextarea" class="text-white">Deine Nachricht</label>
-                                    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-                             <br>
-                                    <div class="form-check">
-                                      <label class="form-check-label text-white">
-                                        <input class="form-check-input" type="checkbox" value="" checked="">
-                                        Newsletter
-                                      </label>
-
-                                      <br>
-                                      <br>
-
-                                <fieldset>
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-
-                                </fieldset>
-
-                              </fieldset>
-                              </form>
-                    <!-- <form action="">
-                        <br>
-                        <input type="radio"  name="anrede" id="herr" value="m" checked="">Herr
-                        <input type="radio"   name="anrede" id="frau" value="f" checked="">Frau
-                        <br>
-                        <label for="vorname" >Vorname</label>
-                        <input type="vorname" id="vorname" class="form-control" name="vorname" placeholder="Vorname" value="">
-                        <br>
-                        <label for="nachname" >Nachname</label>
-                        <input type="nachname" id="nachname" class="form-control" name="nachname" placeholder="Nachname" value="">
-                        <br>
-                        <label for="subject">Betreff</label>
-                        <input type="text" id="inputBetreff" class="form-control" name="subject"  placeholder="Betreff" value="">
-                        <br>
-                        <label for="inputEmail">Email</label>
-                        <input type="email" id="inputEmail" class="form-control" name="email"  placeholder="Email addresse" >
-                        <br>
-                        <br>
-                        <select class="laender" class="form-control" name="laender" require>
-                            <option selected="">Bitte Land wählen</option>
-                            <option value="1">Schweiz</option>
-                            <option value="2">Frankreich</option>
-                            <option value="3">Deutschland</option>
-                            <option value="4">Italien</option> 
-                        </select>
-                        <br>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="yes" name="checkbox[]"> Ich möchte Newsletter erhalten.
-                                <br>
-                                <input type="checkbox" value="no" name="checkbox[]"> Ich möchte keine Newsletter erhalten.
-                            </label>
-                        </div>
-                        <br>
-                        <button class="button" type="submit" name="go">Anmelden</button>
-                    </form> -->
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Kontakrformular -->
+  <?php
+  require "kontaktformular.php"
+  ?>
             
   <!-- Footer -->
-    <footer class="py-3 bg-dark mx-auto">
-        <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; PHP Projekt von Rhottana Truy 2019</p>
-        </div>
-    </footer>
+  <?php
+  require "footer.php"
+  ?>
 
-
-    <script src="code.js"></script>
-    <script src="js/scrolling-nav.js"></script> 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
 </html>
