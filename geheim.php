@@ -56,8 +56,6 @@ session_start();
                 <h2>Discover</h2>
                 <div class="wrapper row d-flex align-items-center justify-content-center">
 
-                    
-
                     <?php
                     include_once 'includes/dbh.inc.php';
 

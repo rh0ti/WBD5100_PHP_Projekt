@@ -1,26 +1,53 @@
-<?php
-session_start();
-?>
+<?php 
+if(isset($_GET['ID'])){
+    //echo "Habe die GET-Variable erhalten";
+    //Hier müsste man noch der FILTER SANITIZE einsetzen
+    $id = $_GET['ID'];
 
-<?php
-$_SESSION['username'] = "Ad";
+}
+else{
+    echo "Habe die GET-Variable nicht erhalten";
+}
 
+require('includes/dbh.inc.php');
 
-// Insert record
+// Update record
 if(isset($_POST['submit'])){
 
   $title = $_POST['titleGallery'];
-  $descGallery = $_POST['descGallery'];
+  $desc = $_POST['descGallery'];
+  $id = $_POST['ID'];
+
+ $sql = "UPDATE gallery SET";
+$sql .= " titleGallery='".$title."',";
+$sql .= " descGallery='".$desc."',";
+$sql .= " WHERE idGallery=".$id;
+//echo $sql;
+$result = $conn->query($sql);
 
 
-  if($title != ''){
 
-    mysqli_query($conn, "INSERT INTO gallery(titleGallery,descGallery) VALUES('".$title."','".$descGallery."') ");
-    header('location: index.php');
-  }
 }
+else{
+    $sql = "SELECT * FROM gallery WHERE ID=".$id;
+    $result = $conn->query($sql);
 
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $row["idGallery"];
+           $title =  $row["titleGallery"];
+           $desc = $row["descGallery"];
+
+
+        }
+    }
+        else {
+            echo " Kann diesen Datensatz nicht nicht finden.";
+        }
+
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,7 +72,7 @@ if(isset($_POST['submit'])){
                             <a class="nav-link js-scroll-trigger" href="geheim.php">Discover</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#">Dein Profil</a>
+                            <a class="nav-link js-scroll-trigger" href="profil.php">Dein Profil</a>
                         </li>
                         <div class="box3">
                             <form class="form" action="includes/logout.inc.php" method="post">
@@ -72,26 +99,21 @@ if(isset($_POST['submit'])){
                     <p>Und finde neue Freunde.</p>
                 </div>
                 
-                <?php
-                if(isset($_SESSION['username'])){
-                 echo '<div class="gallery-upload d-flex align-items-center justify-content-center flex-column">
-                        <form action="includes/gallery-upload.inc.php" method="post" enctype="multipart/form-data" style="width: 400px; border: solid 1px black; background-color: #6F7A72" class="p-3 m-4">
+              
+               <div class="gallery-upload d-flex align-items-center justify-content-center flex-column">
+                        <form action="update.php" method="post" enctype="multipart/form-data" style="width: 400px; border: solid 1px black; background-color: #6F7A72" class="p-3 m-4">
                             <div class="form-group">
                             <input type="text" class="form-control m-1" name="filename" placeholder="File name...">
-                            <input type="text" class="form-control m-1" name="titleGallery" placeholder="Your name...">
-                            <textarea class="form-control m-1" rows="3" id="descGallery" name="descGallery" placeholder="Bio description.."></textarea>
+                            <input type="text" class="form-control m-1" name="titleGallery" value="<?=$title?>" placeholder="Your name...">
+                            <textarea class="form-control m-1" rows="3" id="descGallery" name="descGallery" placeholder="Bio description.."><?=$desc?></textarea>
                             <input type="file" name="file" class="form-control-file m-1 text-white">
+                            <input type="hidden" name="ID" value="<?=$id?>">
                             <button type="submit" name="submit" class="btn btn-primary">Save</button>
-                            <a class="text-white btn btn-primary" href="lesen.php">Edit</a>
-                            
                             </div>
                         </form>
-
-                        </div>';
-                    }
-                        ?>
-
-
+                        </div>
+                  
+                      
 
 <script>
 	// Replace the <textarea> with a CKEditor
@@ -104,5 +126,3 @@ if(isset($_POST['submit'])){
 <?php
 require "footer.php"
 ?>
-
-

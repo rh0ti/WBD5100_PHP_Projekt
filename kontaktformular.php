@@ -27,7 +27,6 @@
                 }     
                 
             ?>
-
                 <form method="post" action="includes/kontaktformular_send_email.inc.php">
                     <fieldset class="form-group">
                         <div class="form-check">

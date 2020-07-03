@@ -8,8 +8,8 @@ if (isset($_POST['submit'])){
     } else{
         $newFileName = strtolower(str_replace(" ", "-",$newFileName));
     }
-    $imageTitle = $_POST['filetitle'];
-    $imageDesc = $_POST['filedesc'];
+    $imageTitle = $_POST['titleGallery'];
+    $imageDesc = $_POST['descGallery'];
 
     $file = $_FILES['file'];
 
@@ -75,10 +75,5 @@ if (isset($_POST['submit'])){
         echo "You need to upload a proper file type!";
         exit();
     }
-
-
-
-
-
 
 }

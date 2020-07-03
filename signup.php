@@ -51,7 +51,7 @@ session_start();
             </div>
         </div>
         <div class="image-title fixed-top p-3">
-                <img src="img/logo-name.png" class="img-fluid" alt="Name logo of Silaryon" > 
+                <img src="img/logofinal.png" class="img-fluid" style="height:180px;" alt="Logo" > 
         </div>
     </header>
   </section>
