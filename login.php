@@ -3,8 +3,7 @@
 
 <?php
 session_start();
-?>  
-
+?>
 
 <div class="image-title fixed-top p-3">
     <img src="img/logofinal.png" class="img-fluid" style="height:180px;" alt="Rhoti Van Logo">
