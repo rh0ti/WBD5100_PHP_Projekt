@@ -9,13 +9,14 @@ $_SESSION['username'] = "Ad";
 // Insert record
 if(isset($_POST['submit'])){
 
-  $title = $_POST['titleGallery'];
-  $descGallery = $_POST['descGallery'];
+    $imgName = $_POST['filename'];
+    $title = $_POST['titleGallery'];
+    $descGallery = $_POST['descGallery'];
 
 
   if($title != ''){
 
-    mysqli_query($conn, "INSERT INTO gallery(titleGallery,descGallery) VALUES('".$title."','".$descGallery."') ");
+    mysqli_query($conn, "INSERT INTO gallery(imgFullNameGallery,titleGallery,descGallery) VALUES('".$imgName."','".$title."','".$descGallery."') ");
     header('location: index.php');
   }
 }
@@ -30,6 +31,9 @@ if(isset($_POST['submit'])){
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="css/geheim.css">
     <title>PHP Projekt</title>
+
+    <script src="../ckeditor/ckeditor.js"></script>
+
 </head>
 
  <!-- Navigation -->
@@ -79,7 +83,7 @@ if(isset($_POST['submit'])){
                             <div class="form-group">
                             <input type="text" class="form-control m-1" name="filename" placeholder="File name...">
                             <input type="text" class="form-control m-1" name="titleGallery" placeholder="Your name...">
-                            <textarea class="form-control m-1" rows="3" id="descGallery" name="descGallery" placeholder="Bio description.."></textarea>
+                            <textarea class="form-control m-1" rows="3" id="descGallery" name="descGallery" id="descGallery" placeholder="Bio description.."></textarea>
                             <input type="file" name="file" class="form-control-file m-1 text-white">
                             <button type="submit" name="submit" class="btn btn-primary">Save</button>
                             <a class="text-white btn btn-primary" href="lesen.php">Edit</a>
@@ -91,15 +95,15 @@ if(isset($_POST['submit'])){
                     }
                         ?>
 
-
-
-<script>
-	// Replace the <textarea> with a CKEditor
-	// instance, using default configuration.
-  CKEDITOR.replace( 'descGallery' );
-</script>
-
   </section>
+  <script>
+
+// Replace the <textarea id="editor1"> with a CKEditor
+// instance, using default configuration.
+CKEDITOR.replace( 'descGallery', {
+    customConfig: 'config.js'
+});
+</script>
 
 <?php
 require "footer.php"

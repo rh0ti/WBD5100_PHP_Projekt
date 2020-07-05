@@ -1,4 +1,6 @@
 <?php 
+require('includes/dbh.inc.php');
+
 if(isset($_GET['ID'])){
     //echo "Habe die GET-Variable erhalten";
     //Hier müsste man noch der FILTER SANITIZE einsetzen
@@ -9,16 +11,17 @@ else{
     echo "Habe die GET-Variable nicht erhalten";
 }
 
-require('includes/dbh.inc.php');
 
 // Update record
 if(isset($_POST['submit'])){
 
+  $imgName = $_POST['filename'];
   $title = $_POST['titleGallery'];
   $desc = $_POST['descGallery'];
-  $id = $_POST['ID'];
+//   $id = $_POST['ID'];
 
  $sql = "UPDATE gallery SET";
+$sql .= " imgFullNameGallery='".$imgName."',";
 $sql .= " titleGallery='".$title."',";
 $sql .= " descGallery='".$desc."',";
 $sql .= " WHERE idGallery=".$id;
@@ -32,9 +35,10 @@ else{
     $sql = "SELECT * FROM gallery WHERE ID=".$id;
     $result = $conn->query($sql);
 
-    if ($result->num_rows > 0) {
+    if ($result->mysqli_num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             $row["idGallery"];
+            $imgName =  $row["imgFullNameGallery"];
            $title =  $row["titleGallery"];
            $desc = $row["descGallery"];
 
@@ -57,6 +61,7 @@ else{
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="css/geheim.css">
     <title>PHP Projekt</title>
+
 </head>
 
  <!-- Navigation -->
@@ -103,7 +108,7 @@ else{
                <div class="gallery-upload d-flex align-items-center justify-content-center flex-column">
                         <form action="update.php" method="post" enctype="multipart/form-data" style="width: 400px; border: solid 1px black; background-color: #6F7A72" class="p-3 m-4">
                             <div class="form-group">
-                            <input type="text" class="form-control m-1" name="filename" placeholder="File name...">
+                            <input type="text" class="form-control m-1" name="filename" value="<?=$imgName?>"  placeholder="File name...">
                             <input type="text" class="form-control m-1" name="titleGallery" value="<?=$title?>" placeholder="Your name...">
                             <textarea class="form-control m-1" rows="3" id="descGallery" name="descGallery" placeholder="Bio description.."><?=$desc?></textarea>
                             <input type="file" name="file" class="form-control-file m-1 text-white">
@@ -113,16 +118,11 @@ else{
                         </form>
                         </div>
                   
-                      
-
-<script>
-	// Replace the <textarea> with a CKEditor
-	// instance, using default configuration.
-  CKEDITOR.replace( 'descGallery' );
-</script>
-
+                    
   </section>
 
 <?php
 require "footer.php"
 ?>
+
+
