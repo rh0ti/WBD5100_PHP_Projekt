@@ -61,7 +61,7 @@ else{
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="css/geheim.css">
     <title>PHP Projekt</title>
-
+    <script src="ckeditor/ckeditor.js"></script>
 </head>
 
  <!-- Navigation -->
@@ -106,7 +106,7 @@ else{
                 
               
                <div class="gallery-upload d-flex align-items-center justify-content-center flex-column">
-                        <form action="update.php" method="post" enctype="multipart/form-data" style="width: 400px; border: solid 1px black; background-color: #6F7A72" class="p-3 m-4">
+                        <form action="update.php" method="post" enctype="multipart/form-data" style="width: 1000px; border: solid 1px black; background-color: #6F7A72" class="p-3 m-4">
                             <div class="form-group">
                             <input type="text" class="form-control m-1" name="filename" value="<?=$imgName?>"  placeholder="File name...">
                             <input type="text" class="form-control m-1" name="titleGallery" value="<?=$title?>" placeholder="Your name...">
@@ -120,7 +120,14 @@ else{
                   
                     
   </section>
+  <script>
 
+// Replace the <textarea id="editor1"> with a CKEditor
+// instance, using default configuration.
+CKEDITOR.replace( 'descGallery', {
+    customConfig: 'config.js'
+});
+</script>
 <?php
 require "footer.php"
 ?>

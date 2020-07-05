@@ -32,7 +32,7 @@ if(isset($_POST['submit'])){
     <link rel="stylesheet" href="css/geheim.css">
     <title>PHP Projekt</title>
 
-    <script src="../ckeditor/ckeditor.js"></script>
+    <script src="ckeditor/ckeditor.js"></script>
 
 </head>
 
@@ -79,7 +79,7 @@ if(isset($_POST['submit'])){
                 <?php
                 if(isset($_SESSION['username'])){
                  echo '<div class="gallery-upload d-flex align-items-center justify-content-center flex-column">
-                        <form action="includes/gallery-upload.inc.php" method="post" enctype="multipart/form-data" style="width: 400px; border: solid 1px black; background-color: #6F7A72" class="p-3 m-4">
+                        <form action="includes/gallery-upload.inc.php" method="post" enctype="multipart/form-data" style="width: 1000px; border: solid 1px black; background-color: #6F7A72" class="p-3 m-4">
                             <div class="form-group">
                             <input type="text" class="form-control m-1" name="filename" placeholder="File name...">
                             <input type="text" class="form-control m-1" name="titleGallery" placeholder="Your name...">
