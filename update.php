@@ -1,41 +1,36 @@
 <?php 
-require('includes/dbh.inc.php');
-
 if(isset($_GET['ID'])){
-    //echo "Habe die GET-Variable erhalten";
-    //Hier müsste man noch der FILTER SANITIZE einsetzen
     $id = $_GET['ID'];
-
 }
 else{
-    echo "Habe die GET-Variable nicht erhalten";
+    echo "Deine Änderungen wurden gespeichert.";
 }
 
+require('includes/dbh.inc.php');
 
 // Update record
 if(isset($_POST['submit'])){
 
-  $imgName = $_POST['filename'];
-  $title = $_POST['titleGallery'];
-  $desc = $_POST['descGallery'];
-//   $id = $_POST['ID'];
+    $title = $_POST['titleGallery'];
+    $desc = $_POST['descGallery'];
+    $imgName = $_POST['filename'];
+    $id = $_POST['ID'];
 
- $sql = "UPDATE gallery SET";
-$sql .= " imgFullNameGallery='".$imgName."',";
-$sql .= " titleGallery='".$title."',";
-$sql .= " descGallery='".$desc."',";
-$sql .= " WHERE idGallery=".$id;
+ $sql = "UPDATE gallery SET 
+ titleGallery = '".$title."',
+ descGallery = '".$desc."',
+ imgFullNameGallery = '".$imgName."'
+ WHERE idGallery = '$id' ";
+
 //echo $sql;
 $result = $conn->query($sql);
 
-
-
 }
 else{
-    $sql = "SELECT * FROM gallery WHERE ID=".$id;
+    $sql = "SELECT * FROM gallery WHERE idGallery=".$id;
     $result = $conn->query($sql);
 
-    if ($result->mysqli_num_rows > 0) {
+    if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             $row["idGallery"];
             $imgName =  $row["imgFullNameGallery"];
@@ -108,12 +103,12 @@ else{
                <div class="gallery-upload d-flex align-items-center justify-content-center flex-column">
                         <form action="update.php" method="post" enctype="multipart/form-data" style="width: 1000px; border: solid 1px black; background-color: #6F7A72" class="p-3 m-4">
                             <div class="form-group">
-                            <input type="text" class="form-control m-1" name="filename" value="<?=$imgName?>"  placeholder="File name...">
-                            <input type="text" class="form-control m-1" name="titleGallery" value="<?=$title?>" placeholder="Your name...">
+                            <input type="text" class="form-control m-1" id="filename" name="filename" value="<?=$imgName?>"  placeholder="File name...">
+                            <input type="text" class="form-control m-1" id="titleGallery" name="titleGallery" value="<?=$title?>" placeholder="Your name...">
                             <textarea class="form-control m-1" rows="3" id="descGallery" name="descGallery" placeholder="Bio description.."><?=$desc?></textarea>
                             <input type="file" name="file" class="form-control-file m-1 text-white">
                             <input type="hidden" name="ID" value="<?=$id?>">
-                            <button type="submit" name="submit" class="btn btn-primary">Save</button>
+                            <input type="submit" name="submit" value="Speichern" class="btn btn-primary">
                             </div>
                         </form>
                         </div>

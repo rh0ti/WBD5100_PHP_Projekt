@@ -8,7 +8,7 @@ session_start();
             <div class="col-xl-4 header-left d-flex flex-column justify-content-center align-items-center">
                 <div class="text">
                     <h1>Registrierung</h1>
-                    <p>Hast du bereits einen Account? <a href="index.php">Login</a></p>
+                    <p>Hast du bereits einen Account? <a href="login.php">Login</a></p>
                 </div>
 
                 <?php
@@ -32,7 +32,7 @@ session_start();
                         echo '<p class="error">Dieser Username oder Email wird bereits benutzt!</p>';
                     }   
                     else if($_GET["error"] == "success"){
-                        echo '<p class="success">Login erfolgreich!</p>';
+                        echo '<p class="success">Registrierung erfolgreich! Jetzt kannst du dich einloggen.</p>';
                     }
                 }
             ?>

@@ -2,9 +2,9 @@
 require("includes/dbh.inc.php");
 
 if (isset($_POST['deleter'])){
-    $sql1 = "DELETE FROM contents";
-    $sql1 .= " WHERE id=".$_POST['deleter'];
-    $result1 = $con->query($sql1);
+    $sql1 = "DELETE FROM gallery";
+    $sql1 .= " WHERE idGallery=".$_POST['deleter'];
+    $result1 = $conn->query($sql1);
 }
 
 
