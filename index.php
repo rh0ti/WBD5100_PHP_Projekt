@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +10,7 @@
     <title>PHP Projekt</title>
 </head>
 <body id="page-top">
+
 
 <!--------------------------------------------- BEREICH HEADER ----------------------------------------------->
 
@@ -26,7 +28,7 @@
         <div class="image-title fixed-top p-3">
                 <img src="img/logofinal.png" class="img-fluid" style="height:180px;" alt="Rhoti Van Logo">
     </header>
-<!--------------------------------------------- NAvigation ----------------------------------------------->
+<!--------------------------------------------- NAVIGATION ----------------------------------------------->
 
     <nav class="navbar navbar-expand-lg navbar-light  fixed-top" id="mainNav">
             <div class="container">
