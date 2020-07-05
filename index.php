@@ -129,7 +129,7 @@
             
   <!-- Footer -->
   <?php
-  require "footer.php"
+  require "./includes/footer.inc.php"
   ?>
 
 </body>

@@ -118,7 +118,7 @@ echo $code;
 </section>
 
 <?php
-include("footer.php");
+ include "./includes/footer.inc.php"
 ?> 
 
 

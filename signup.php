@@ -58,10 +58,10 @@ session_start();
 
 
   <?php
-require "header.php"
+require "./includes/header.inc.php"
 ?>
 
 
 <?php
-require "footer.php"
+require "./includes/footer.inc.php"
 ?>

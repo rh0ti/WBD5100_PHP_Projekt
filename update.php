@@ -124,7 +124,7 @@ CKEDITOR.replace( 'descGallery', {
 });
 </script>
 <?php
-require "footer.php"
+require "./includes/footer.inc.php"
 ?>
 
 

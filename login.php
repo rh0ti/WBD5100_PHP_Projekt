@@ -7,7 +7,7 @@ session_start();
     </div>
 
 <?php
-require "header.php"
+require "./includes/header.inc.php"
 ?>
 
 <section id="login">
@@ -64,5 +64,5 @@ require "header.php"
 
 
 <?php
-require "footer.php"
+require "./includes/footer.inc.php"
 ?>
