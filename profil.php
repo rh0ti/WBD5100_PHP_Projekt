@@ -1,3 +1,6 @@
+
+<!--------------------------------------------- BEREICH PROFIL----------------------------------------------->
+
 <?php
 session_start();
 ?>
@@ -6,22 +9,23 @@ session_start();
 $_SESSION['username'] = "Ad";
 
 
-// Insert record
+// ---------------------------------------------- INSERT RECORD ----------------------------------------------
 if(isset($_POST['submit'])){
 
-    $imgName = $_POST['filename'];
-    $title = $_POST['titleGallery'];
-    $descGallery = $_POST['descGallery'];
+$imgName = $_POST['filename'];
+$title = $_POST['titleGallery'];
+$descGallery = $_POST['descGallery'];
 
-
-  if($title != ''){
-
+if($title != ''){
     mysqli_query($conn, "INSERT INTO gallery(imgFullNameGallery,titleGallery,descGallery) VALUES('".$imgName."','".$title."','".$descGallery."') ");
     header('location: index.php');
   }
 }
 
 ?>
+
+<!------------------------------------------------------------------------------------------------------------>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +40,8 @@ if(isset($_POST['submit'])){
 
 </head>
 
- <!-- Navigation -->
+<!--------------------------------------------- NAVIGATION --------------------------------------------------->
+
  <nav class="navbar navbar-expand-lg navbar-light"  style="background-color: #6F7A72; height: 90px;" id="mainNav">
         <div class="container">
             <a class="navbar-brand js-scroll-trigger"  href="#page-top"></a>
@@ -61,9 +66,13 @@ if(isset($_POST['submit'])){
         </div>
     </nav>
 
+<!--------------------------------------------- Logo --------------------------------------------------->
+
     <div class="image-title  p-3 d-flex justify-content-center" >
         <img src="img/logofinal.png" class="img-fluid " style="height:180px; position:absolute; top:2%;" alt="Rhoti Van Logo">
     </div>
+
+<!--------------------------------------------- Formular --------------------------------------------------->
 
 <section id="gallery">
         <div class="row position-relative">

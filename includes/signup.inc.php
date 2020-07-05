@@ -1,5 +1,7 @@
-<?php
 
+<!--------------------------------------------- INCLUDES SIGNUP ----------------------------------------------->
+
+<?php
 if(isset($_POST["signup-submit"])){
 
     require 'dbh.inc.php';
@@ -8,7 +10,6 @@ if(isset($_POST["signup-submit"])){
     $email = $_POST['mail'];
     $password = $_POST['pwd'];
     $passwordRepeat = $_POST['pwd-repeat'];
-
 
     //Überprüft, ob nicht Leer ist
     if(empty($username) || empty($email) || empty($password) || empty($passwordRepeat) ){

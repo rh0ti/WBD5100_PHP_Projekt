@@ -1,6 +1,6 @@
 
+<!--------------------------------------------- BEREICH KONTAKTFORMULAR----------------------------------------------->
 
- <!-- Bereich THIRD-PAGE KONTAKFORMULAR-->
  <section id="third-page">
     <div class="row position-relative">
         <div class="col-xl-8 contact-left ">
@@ -12,7 +12,7 @@
                 <p>Hast du eine Frage? Dann schreib uns.</p>
             </div>
             <div class="contact-form">
-
+<!--------------------------------------------- PHP ----------------------------------------------->
             <?php
                 if(isset($_GET['error'])){
                     if($_GET['error'] == "emptyfields"){
@@ -24,56 +24,56 @@
                     else if($_GET['error'] == "success"){ 
                         echo '<p class="error">Deine Email wurde versendet!</p>';
                     }
-                }     
-                
+                }       
             ?>
-                <form method="post" action="includes/kontaktformular_send_email.inc.php">
-                    <fieldset class="form-group">
-                        <div class="form-check">
-                            <label class="form-check-label text-white">
-                            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="Herr" checked="">
-                            Herr
-                            </label>
-                        </div>
-
-                        <div class="form-check">
+<!-------------------------------------------------------------------------------------------------->
+            <form method="post" action="includes/kontaktformular_send_email.inc.php">
+                <fieldset class="form-group">
+                    <div class="form-check">
                         <label class="form-check-label text-white">
-                            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="Frau">
-                            Frau
-                            </label>
-                        </div>
+                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="Herr" checked="">
+                        Herr
+                        </label>
+                    </div>
 
-                        <label for="Name"></label>
-                        <input type="text" id="Name" class="form-control" name="Name" placeholder="Name" value="">
+                    <div class="form-check">
+                    <label class="form-check-label text-white">
+                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="Frau">
+                        Frau
+                        </label>
+                    </div>
 
-                        <label for="Email"></label>
-                        <input type="text" class="form-control" id="Email" name="Email" placeholder="Enter email">
+                    <label for="Name"></label>
+                    <input type="text" id="Name" class="form-control" name="Name" placeholder="Name" value="">
 
-                        <label for="exampleSelect1"></label>
-                        <select class="form-control" id="exampleSelect1">
-                            <option selected="">Bitte Land wählen</option>
-                            <option value="1">Schweiz</option>
-                            <option value="2">Frankreich</option>
-                            <option value="3">Deutschland</option>
-                            <option value="4">Italien</option> 
-                        </select>
+                    <label for="Email"></label>
+                    <input type="text" class="form-control" id="Email" name="Email" placeholder="Enter email">
 
-                        <label for="Betreff"><b></b></label><br>
-                        <input type="text" class="form-control" id="Betreff" name="Betreff" placeholder="Betreff"><br><br>
+                    <label for="exampleSelect1"></label>
+                    <select class="form-control" id="exampleSelect1">
+                        <option selected="">Bitte Land wählen</option>
+                        <option value="1">Schweiz</option>
+                        <option value="2">Frankreich</option>
+                        <option value="3">Deutschland</option>
+                        <option value="4">Italien</option> 
+                    </select>
 
-                        <label for="Nachricht" class="text-white">Deine Nachricht</label>
-                        <textarea class="form-control" id="Nachricht" name="Nachricht" rows="3"></textarea> <br>
-                           
-                        <div class="form-check">
-                            <label class="form-check-label text-white">
-                            <input class="form-check-input" type="checkbox" value="" checked="">
-                            Newsletter
-                            </label>
-                            <br>
-                            <br>
-                            <fieldset>
-                            <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-                            </fieldset>
+                    <label for="Betreff"><b></b></label><br>
+                    <input type="text" class="form-control" id="Betreff" name="Betreff" placeholder="Betreff"><br><br>
+
+                    <label for="Nachricht" class="text-white">Deine Nachricht</label>
+                    <textarea class="form-control" id="Nachricht" name="Nachricht" rows="3"></textarea> <br>
+                        
+                    <div class="form-check">
+                        <label class="form-check-label text-white">
+                        <input class="form-check-input" type="checkbox" value="" checked="">
+                        Newsletter
+                        </label>
+                        <br>
+                        <br>
+                        <fieldset>
+                        <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+                        </fieldset>
                     </fieldset>
                 </form>
             </div>

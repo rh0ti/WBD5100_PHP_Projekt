@@ -1,3 +1,6 @@
+
+<!--------------------------------------------- INCLUDES LOGIN ----------------------------------------------->
+
 <?php
 session_start();
 //wenn submit gedrückt wird
@@ -24,7 +27,7 @@ if(isset($_POST['login-submit'])){
             exit();
         }
     else{
-        //pass the info to
+        //pass the info
         mysqli_stmt_bind_param($stmt,"ss", $mailuid, $mailuid);
         //result von database
         mysqli_stmt_execute($stmt);

@@ -1,10 +1,13 @@
+
+<!--------------------------------------------- BEREICH LOGIN ----------------------------------------------->
+
 <?php
 session_start();
 ?>
 
-    <div class="image-title fixed-top p-3">
-        <img src="img/logofinal.png" class="img-fluid" style="height:180px;" alt="Rhoti Van Logo">
-    </div>
+<div class="image-title fixed-top p-3">
+    <img src="img/logofinal.png" class="img-fluid" style="height:180px;" alt="Rhoti Van Logo">
+</div>
 
 <?php
 require "./includes/header.inc.php"
@@ -22,7 +25,7 @@ require "./includes/header.inc.php"
                 <p>Noch kein Account? <a href="signup.php">Signup</a></p>
             </div>
 
-                        <!-- PHP - Meldung beim Einlogen -->
+ <!--------------------------------------------- PHP - Meldung beim Einlogen ----------------------------------------------->      
         <?php
             if(isset($_SESSION['userId'])){
                 echo '<p class="info" > Du hast dich erfolgreich eingeloggt!</p>';
@@ -31,7 +34,7 @@ require "./includes/header.inc.php"
                 echo '<p class="info" >Log dich ein!</p>';
             }
         ?>
-        <!-- PHP - ERROR Meldung, wenn etwas nicht korrekt ausgefüllt ist! -->
+<!--------------------------- PHP - ERROR Meldung, wenn etwas nicht korrekt ausgefüllt ist! ------------------------------->
         <?php
             if(isset($_GET['error'])){
                 if($_GET['error'] == "emptyfields"){
@@ -48,8 +51,7 @@ require "./includes/header.inc.php"
                 }
             }
         ?>
-
-        <!-- Login Formular -->
+<!--------------------------------------------------- Login Formular --------------------------------------------------------->    
 
         <div class="box2">
             <form class="form" action="includes/login.inc.php" method="post">
@@ -58,10 +60,7 @@ require "./includes/header.inc.php"
                 <button class="button" type="submit" name="login-submit">Login</button>
             </form>
           </div>
-
  </section>
-
-
 
 <?php
 require "./includes/footer.inc.php"

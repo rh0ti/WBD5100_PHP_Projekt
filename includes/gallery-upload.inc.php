@@ -1,3 +1,6 @@
+
+<!--------------------------------------------- GALLERY UPLOAD ----------------------------------------------->
+
 <?php
 
 if (isset($_POST['submit'])){
@@ -55,25 +58,20 @@ if (isset($_POST['submit'])){
 
                             move_uploaded_file($fileTempName, $fileDestination);
 
-                            header("Location: ../geheim.php?upload=success");
-                           
+                            header("Location: ../geheim.php?upload=success");              
                         }
-
                     }
                 }
             }else{
                 echo "File size is too big!";
                 exit();
             }
-
         }else{
             echo "You had an error!";
             exit();
-
         }
     }else{
         echo "You need to upload a proper file type!";
         exit();
     }
-
 }

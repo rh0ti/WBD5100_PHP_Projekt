@@ -1,3 +1,4 @@
+<!--------------------------------------------- BEREICH SIGNUP----------------------------------------------->
 <?php
 session_start();
 ?>
@@ -11,6 +12,7 @@ session_start();
                     <p>Hast du bereits einen Account? <a href="login.php">Login</a></p>
                 </div>
 
+<!--------------------------------------------- ERROR MELDUNGEN ----------------------------------------------->
                 <?php
                 if(isset($_GET['error'])){
                     if($_GET['error'] == "emptyfields"){
@@ -36,22 +38,23 @@ session_start();
                     }
                 }
             ?>
-                <div class="box">
-                    <form class="form" action="includes/signup.inc.php" method="post">
-                        <input class="username" type="text" name="uid" placeholder= "Username">
-                        <input class="email" type="text" name="mail" placeholder= "E-Mail">
-                        <input class="password" type="password" name="pwd" placeholder= "Password">
-                        <input class="password2" type="password" name="pwd-repeat" placeholder= "Repeat password">
-                        <button class="button" type="submit" name=signup-submit>Signup</button>
-                    </form>
-                </div>
+<!--------------------------------------------- SIGNUP FORMULAR ----------------------------------------------->
+            <div class="box">
+                <form class="form" action="includes/signup.inc.php" method="post">
+                    <input class="username" type="text" name="uid" placeholder= "Username">
+                    <input class="email" type="text" name="mail" placeholder= "E-Mail">
+                    <input class="password" type="password" name="pwd" placeholder= "Password">
+                    <input class="password2" type="password" name="pwd-repeat" placeholder= "Repeat password">
+                    <button class="button" type="submit" name=signup-submit>Signup</button>
+                </form>
+            </div>
             </div>
             <div class="col-xl-8 header-right">
                 <img src="./img/friends.jpg" class="img-fluid header-image" alt="Responsive image">
             </div>
         </div>
         <div class="image-title fixed-top p-3">
-                <img src="img/logofinal.png" class="img-fluid" style="height:180px;" alt="Logo" > 
+            <img src="img/logofinal.png" class="img-fluid" style="height:180px;" alt="Logo" > 
         </div>
     </header>
   </section>

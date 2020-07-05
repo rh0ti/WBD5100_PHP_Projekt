@@ -10,7 +10,8 @@
 </head>
 <body id="page-top">
 
-    <!-- Bereich Header-->
+<!--------------------------------------------- BEREICH HEADER ----------------------------------------------->
+
     <section id="header">
     <header class="container-fluid">
         <div class="row">
@@ -25,7 +26,8 @@
         <div class="image-title fixed-top p-3">
                 <img src="img/logofinal.png" class="img-fluid" style="height:180px;" alt="Rhoti Van Logo">
     </header>
-    <!-- Navigation -->
+<!--------------------------------------------- NAvigation ----------------------------------------------->
+
     <nav class="navbar navbar-expand-lg navbar-light  fixed-top" id="mainNav">
             <div class="container">
                 <a class="navbar-brand js-scroll-trigger" href="#page-top"></a>
@@ -51,7 +53,8 @@
             </div>
         </nav>
     </section>
-   <!-- Bereich SECOND-PAGE GIRL/BOY-->
+  <!--------------------------------------------- Bereich SECOND-PAGE GIRL/BOY ----------------------------------------------->
+  
     <section id="second-page">
         <div class="container-fluid">
             <div class="row">
@@ -74,7 +77,7 @@
             </div>
         </div>
     </section>
-    <!-- Bereich Image Slider-->
+<!--------------------------------------------- Bereich IMAGE SLIDER ----------------------------------------------->
     <section id="image-slider">
             <div class="container-fluid ">
                 <div class="row">
@@ -122,12 +125,12 @@
             </div>
     </section>
 
-  <!-- Kontakrformular -->
+<!--------------------------------------------- INCLUDE KONTAKTFORMULAR ----------------------------------------------->
   <?php
   require "kontaktformular.php"
   ?>
             
-  <!-- Footer -->
+<!--------------------------------------------- INCLUDE FOOTER ----------------------------------------------->
   <?php
   require "./includes/footer.inc.php"
   ?>
