@@ -1,7 +1,3 @@
-<!--------------------------------------------- BEREICH SIGNUP----------------------------------------------->
-<?php
-session_start();
-?>
 
 <section id="signup">
     <div class="container-fluid">

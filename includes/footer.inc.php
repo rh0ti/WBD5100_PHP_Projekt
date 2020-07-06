@@ -1,6 +1,4 @@
 
-<!--------------------------------------------- Footer ----------------------------------------------->
-
 <footer class="py-3 bg-dark mx-auto">
     <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; PHP Projekt von Rhottana Truy 2019</p>

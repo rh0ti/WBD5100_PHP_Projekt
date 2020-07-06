@@ -1,6 +1,4 @@
 
-<!--------------------------------------------- BEREICH KONTAKTFORMULAR----------------------------------------------->
-
  <section id="third-page">
     <div class="row position-relative">
         <div class="col-xl-8 contact-left ">

@@ -1,6 +1,3 @@
-
-<!--------------------------------------------- VERBINDUNG ZU DATENBANK----------------------------------------------->
-
 <?php
 $servername = "localhost";/* Host name */
 $dBUsername = "root"; /* User */
